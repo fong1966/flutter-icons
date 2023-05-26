@@ -52,35 +52,61 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Icon(
-              FlutterIcons.linkedin_square_ant,
-              size: 100,
-            ),
-            IconToggle(
-                activeColor: Colors.red,
-                unselectedIconData: Entypo.hand,
-                inactiveColor: Colors.black,
-                onChanged: (value) => debugPrint('$value'),
-                reverseDuration: const Duration(microseconds: 1000)),
-            // const Icon(AntDesign.stepforward),
-            // const Icon(Ionicons.ios_search),
-            // const Icon(FontAwesome.glass),
-            // const Icon(MaterialIcons.ac_unit),
-            // const Icon(FontAwesome5.address_book),
-            // const Icon(FontAwesome5Solid.address_book),
-            // const Icon(FontAwesome5Brands.$500px),
-            // const Icon(FlutterIcons.$500px_ent),
-            // const Icon(FlutterIcons.$500px_faw5d),
-            // const Icon(WeatherIcons.wi_alien),
-            // const Icon(WeatherIcons.wi_cloud),
-            // const Icon(WeatherIcons.wi_day_rain)
-          ],
-        ),
+      body: PageView(
+        children: const [
+          Icon(
+            FlutterIcons.linkedin_square_ant,
+            size: 300,
+          ),
+          Icon(
+            AntDesign.stepforward,
+            size: 300,
+          ),
+          Icon(
+            Ionicons.ios_search,
+            size: 300,
+          ),
+          Icon(
+            FontAwesome.glass,
+            size: 300,
+          ),
+          Icon(
+            MaterialIcons.ac_unit,
+            size: 300,
+          ),
+          Icon(
+            FontAwesome5.address_book,
+            size: 300,
+          ),
+          Icon(
+            FontAwesome5Solid.address_book,
+            size: 300,
+          ),
+          Icon(
+            FontAwesome5Brands.$500px,
+            size: 300,
+          ),
+          Icon(
+            FlutterIcons.$500px_ent,
+            size: 300,
+          ),
+          Icon(
+            FlutterIcons.$500px_faw5d,
+            size: 300,
+          ),
+          Icon(
+            WeatherIcons.wi_alien,
+            size: 300,
+          ),
+          Icon(
+            WeatherIcons.wi_cloud,
+            size: 300,
+          ),
+          Icon(
+            WeatherIcons.wi_day_rain,
+            size: 270,
+          )
+        ],
       ),
     );
   }

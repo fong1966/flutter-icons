@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -21,22 +23,21 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Icons'),
+      home: const MyHomePage(title: 'Flutter Icons'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -56,18 +57,28 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(AntDesign.stepforward),
-//            Icon(Ionicons.ios_search),
-//            Icon(FontAwesome.glass),
-//            Icon(MaterialIcons.ac_unit),
-//            Icon(FontAwesome5.address_book),
-//            Icon(FontAwesome5Solid.address_book),
-//            Icon(FontAwesome5Brands.$500px),
-//            Icon(FlutterIcons.$500px_ent),
-//            Icon(FlutterIcons.$500px_faw5d),
-//            Icon(WeatherIcons.wi_alien),
-//            Icon(WeatherIcons.wi_cloud),
-//            Icon(WeatherIcons.wi_day_rain)
+            const Icon(
+              FlutterIcons.linkedin_square_ant,
+              size: 100,
+            ),
+            IconToggle(
+                activeColor: Colors.red,
+                unselectedIconData: Entypo.hand,
+                inactiveColor: Colors.black,
+                onChanged: (value) => debugPrint('$value'),
+                reverseDuration: const Duration(microseconds: 1000)),
+            // const Icon(AntDesign.stepforward),
+            // const Icon(Ionicons.ios_search),
+            // const Icon(FontAwesome.glass),
+            // const Icon(MaterialIcons.ac_unit),
+            // const Icon(FontAwesome5.address_book),
+            // const Icon(FontAwesome5Solid.address_book),
+            // const Icon(FontAwesome5Brands.$500px),
+            // const Icon(FlutterIcons.$500px_ent),
+            // const Icon(FlutterIcons.$500px_faw5d),
+            // const Icon(WeatherIcons.wi_alien),
+            // const Icon(WeatherIcons.wi_cloud),
+            // const Icon(WeatherIcons.wi_day_rain)
           ],
         ),
       ),
